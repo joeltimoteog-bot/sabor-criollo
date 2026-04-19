@@ -8,6 +8,7 @@ const links = [
   { to: '/nosotros', label: 'Nosotros' },
   { to: '/reservas', label: 'Reservas' },
   { to: '/contacto', label: 'Contacto' },
+  { to: '/admin/reservas', label: 'Admin' },
 ]
 
 export default function Navbar() {
