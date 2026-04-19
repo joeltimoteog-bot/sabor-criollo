@@ -51,6 +51,10 @@ export default function ReservasPage() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
+      const reservas = JSON.parse(localStorage.getItem('reservas') || '[]')
+      const nuevaReserva = { ...form, id: Date.now(), fecha_registro: new Date().toLocaleString() }
+      reservas.push(nuevaReserva)
+      localStorage.setItem('reservas', JSON.stringify(reservas))
       setSubmitted(true)
     }, 1800)
   }

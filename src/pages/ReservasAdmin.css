@@ -1,0 +1,177 @@
+/* ── Layout ── */
+.radmin {
+  min-height: 100vh;
+  background: var(--bg, #faf8f5);
+}
+
+.radmin__header {
+  background: var(--primary);
+  padding: 3.5rem 1.5rem 2.5rem;
+}
+
+.radmin__title {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.radmin__sub {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+}
+
+.radmin__body {
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ── Toolbar ── */
+.radmin__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.radmin__count {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.radmin__btn-clear {
+  background: #6b7280;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.radmin__btn-clear:hover {
+  background: #4b5563;
+}
+
+/* ── Empty state ── */
+.radmin__empty {
+  text-align: center;
+  padding: 5rem 1rem;
+  color: var(--gray, #6b7280);
+}
+
+.radmin__empty span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.radmin__empty p {
+  font-size: 1.1rem;
+}
+
+/* ── Table ── */
+.radmin__table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.radmin__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  background: #fff;
+}
+
+.radmin__table thead tr {
+  background: var(--secondary);
+  color: #fff;
+}
+
+.radmin__table th {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.radmin__table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  color: #374151;
+  white-space: nowrap;
+}
+
+.radmin__row--even td {
+  background: #fdf6ee;
+}
+
+/* ── Delete button ── */
+.radmin__btn-del {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radmin__btn-del:hover {
+  background: #b91c1c;
+}
+
+/* ── Mobile cards ── */
+.radmin__cards {
+  display: none;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.radmin__card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.2rem 1.4rem;
+}
+
+.radmin__card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.radmin__card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.radmin__card-label {
+  font-weight: 600;
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .radmin__table-wrap { display: none; }
+  .radmin__cards { display: flex; }
+  .radmin__title { font-size: 1.7rem; }
+}

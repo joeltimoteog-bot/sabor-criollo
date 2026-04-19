@@ -6,6 +6,7 @@ import MenuPage from './pages/MenuPage'
 import NosotrosPage from './pages/NosotrosPage'
 import ReservasPage from './pages/ReservasPage'
 import ContactoPage from './pages/ContactoPage'
+import ReservasAdmin from './pages/ReservasAdmin'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/nosotros" element={<NosotrosPage />} />
           <Route path="/reservas" element={<ReservasPage />} />
           <Route path="/contacto" element={<ContactoPage />} />
+          <Route path="/admin/reservas" element={<ReservasAdmin />} />
         </Routes>
       </main>
       <Footer />
