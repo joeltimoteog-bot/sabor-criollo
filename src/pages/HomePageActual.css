@@ -22,6 +22,7 @@
   filter: drop-shadow(0 0 40px rgba(0,0,0,0.3));
 }
 
+
 .hero__overlay {
   position: absolute;
   inset: 0;
@@ -111,10 +112,12 @@
   50% { transform: translateY(8px); }
 }
 
+/* ── Featured / Carrusel ── */
 .featured {
   padding: 5rem 1.5rem;
 }
 
+/* Carrusel */
 .carousel {
   position: relative;
   display: flex;
@@ -163,16 +166,19 @@
   margin-bottom: 2rem;
 }
 
+/* Dish cards */
 .dish-card {
   background: var(--white);
   border-radius: var(--radius);
-  padding: 1rem;
+  padding: 1.8rem 1.5rem;
   box-shadow: var(--shadow);
   transition: var(--transition);
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .dish-card:hover {
@@ -197,6 +203,11 @@
 
 .dish-card:hover .dish-card__img {
   transform: scale(1.07);
+}
+
+
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .dish-card__category {
@@ -252,6 +263,7 @@
   margin-top: 1rem;
 }
 
+/* ── Why us ── */
 .why {
   background: var(--primary);
   padding: 5rem 1.5rem;
@@ -285,6 +297,7 @@
 .why__card h3 { font-family: var(--font-title); font-size: 1.1rem; color: var(--accent); margin-bottom: 0.7rem; }
 .why__card p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 
+/* ── CTA Banner ── */
 .cta-banner { padding: 3rem 1.5rem 5rem; }
 
 .cta-banner__inner {
