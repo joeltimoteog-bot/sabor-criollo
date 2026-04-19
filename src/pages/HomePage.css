@@ -98,56 +98,51 @@
   50% { transform: translateY(8px); }
 }
 
-/* ── Featured dishes ── */
+/* ── Featured / Carrusel ── */
 .featured {
   padding: 5rem 1.5rem;
 }
 
-/* ── Carousel ── */
+/* Carrusel */
 .carousel {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
 .carousel__window {
   overflow: hidden;
-  flex: 1;
+  width: 100%;
 }
 
 .carousel__track {
   display: flex;
-  transition: transform 0.45s ease;
-}
-
-.carousel__group {
-  display: grid;
-  grid-template-columns: repeat(var(--visible, 3), 1fr);
-  gap: 1.8rem;
-  min-width: 100%;
-  box-sizing: border-box;
+  transition: transform 0.5s ease;
 }
 
 .carousel__arrow {
   flex-shrink: 0;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--secondary);
-  color: #fff;
+  color: var(--white);
+  font-size: 1.2rem;
   border: none;
-  font-size: 1.1rem;
   cursor: pointer;
-  transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--transition);
+  z-index: 2;
+  box-shadow: var(--shadow);
 }
 
 .carousel__arrow:hover {
   background: var(--primary);
+  transform: scale(1.1);
 }
 
 .carousel__dots {
@@ -157,21 +152,7 @@
   margin-bottom: 2rem;
 }
 
-.carousel__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(139,46,0,0.2);
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.carousel__dot--active {
-  background: var(--accent);
-  transform: scale(1.25);
-}
-
+/* Dish cards */
 .dish-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -181,6 +162,9 @@
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .dish-card:hover {
@@ -276,28 +260,12 @@
   transform: translateY(-4px);
 }
 
-.why__icon {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-}
-
-.why__card h3 {
-  font-family: var(--font-title);
-  font-size: 1.1rem;
-  color: var(--accent);
-  margin-bottom: 0.7rem;
-}
-
-.why__card p {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.6;
-}
+.why__icon { font-size: 2.4rem; margin-bottom: 1rem; }
+.why__card h3 { font-family: var(--font-title); font-size: 1.1rem; color: var(--accent); margin-bottom: 0.7rem; }
+.why__card p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 
 /* ── CTA Banner ── */
-.cta-banner {
-  padding: 3rem 1.5rem 5rem;
-}
+.cta-banner { padding: 3rem 1.5rem 5rem; }
 
 .cta-banner__inner {
   background: linear-gradient(135deg, var(--secondary), var(--primary));
@@ -310,25 +278,8 @@
   flex-wrap: wrap;
 }
 
-.cta-banner__text h2 {
-  font-family: var(--font-title);
-  font-size: 1.7rem;
-  color: var(--white);
-  margin-bottom: 0.5rem;
-}
-
-.cta-banner__text p {
-  color: rgba(255,255,255,0.82);
-  font-size: 1rem;
-}
-
-@media (max-width: 1023px) {
-  .carousel__group { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 639px) {
-  .carousel__group { grid-template-columns: 1fr; }
-}
+.cta-banner__text h2 { font-family: var(--font-title); font-size: 1.7rem; color: var(--white); margin-bottom: 0.5rem; }
+.cta-banner__text p { color: rgba(255,255,255,0.82); font-size: 1rem; }
 
 @media (max-width: 768px) {
   .hero__title { font-size: 2.2rem; }
