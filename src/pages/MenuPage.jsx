@@ -3,23 +3,23 @@ import './MenuPage.css'
 
 const menu = [
   // Entradas
-  { id: 1, categoria: 'Entradas', emoji: '🍋', nombre: 'Ceviche Clásico', desc: 'Pescado fresco marinado en limón con ají limo, cebolla morada y choclo serrano.', precio: 28 },
-  { id: 2, categoria: 'Entradas', emoji: '🫑', nombre: 'Causa Limeña', desc: 'Papa amarilla sazonada con ají amarillo, rellena con atún o pollo desmenuzado.', precio: 22 },
-  { id: 3, categoria: 'Entradas', emoji: '🦐', nombre: 'Chupe de Camarones', desc: 'Sopa cremosa de camarones con leche, huevo y arroz, preparada al estilo arequipeño.', precio: 32 },
-  { id: 4, categoria: 'Entradas', emoji: '🥗', nombre: 'Ensalada de Palta', desc: 'Palta fresca con tomate, lechuga, aceitunas y aderezo de limón y cilantro.', precio: 18 },
+  { id: 1, categoria: 'Entradas', img: 'https://images.unsplash.com/photo-1535400255456-984e0e935757?w=400&q=80', nombre: 'Ceviche Clasico', desc: 'Pescado fresco marinado en limon con aji limo, cebolla morada y choclo serrano.', precio: 28 },
+  { id: 2, categoria: 'Entradas', img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80', nombre: 'Causa Limena', desc: 'Papa amarilla sazonada con aji amarillo, rellena con atun o pollo desmenuzado.', precio: 22 },
+  { id: 3, categoria: 'Entradas', img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80', nombre: 'Chupe de Camarones', desc: 'Sopa cremosa de camarones con leche, huevo y arroz, preparada al estilo arequipeno.', precio: 32 },
+  { id: 4, categoria: 'Entradas', img: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=80', nombre: 'Ensalada de Palta', desc: 'Palta fresca con tomate, lechuga, aceitunas y aderezo de limon y cilantro.', precio: 18 },
   // Fondos
-  { id: 5, categoria: 'Fondos', emoji: '🥩', nombre: 'Lomo Saltado', desc: 'Jugoso lomo de res salteado con cebolla, tomate, ají amarillo, sillao y papas fritas.', precio: 36 },
-  { id: 6, categoria: 'Fondos', emoji: '🦆', nombre: 'Ají de Gallina', desc: 'Pollo deshilachado en cremosa salsa de ají amarillo, nueces, pan y queso parmesano.', precio: 30 },
-  { id: 7, categoria: 'Fondos', emoji: '🐟', nombre: 'Sudado de Pescado', desc: 'Pescado fresco cocido en chicha de jora con tomate, cebolla y ají panca.', precio: 34 },
-  { id: 8, categoria: 'Fondos', emoji: '🍛', nombre: 'Seco de Cordero', desc: 'Tierno cordero guisado con culantro, chicha de jora y cancha acompañado de frijoles.', precio: 38 },
+  { id: 5, categoria: 'Fondos', img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&q=80', nombre: 'Lomo Saltado', desc: 'Jugoso lomo de res salteado con cebolla, tomate, aji amarillo, sillao y papas fritas.', precio: 36 },
+  { id: 6, categoria: 'Fondos', img: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80', nombre: 'Aji de Gallina', desc: 'Pollo deshilachado en cremosa salsa de aji amarillo, nueces, pan y queso parmesano.', precio: 30 },
+  { id: 7, categoria: 'Fondos', img: 'https://images.unsplash.com/photo-1559847844-5315695dadae?w=400&q=80', nombre: 'Sudado de Pescado', desc: 'Pescado fresco cocido en chicha de jora con tomate, cebolla y aji panca.', precio: 34 },
+  { id: 8, categoria: 'Fondos', img: 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&q=80', nombre: 'Seco de Cordero', desc: 'Tierno cordero guisado con culantro, chicha de jora y cancha acompanado de frijoles.', precio: 38 },
   // Postres
-  { id: 9, categoria: 'Postres', emoji: '🍮', nombre: 'Suspiro Limeño', desc: 'Suave manjar blanco coronado con merengue de oporto y canela al gusto.', precio: 14 },
-  { id: 10, categoria: 'Postres', emoji: '🍰', nombre: 'Arroz con Leche', desc: 'Cremoso arroz cocido en leche con canela, clavo y azúcar al gusto.', precio: 12 },
-  { id: 11, categoria: 'Postres', emoji: '🫐', nombre: 'Mazamorra Morada', desc: 'Deliciosa mazamorra de maíz morado con frutas secas y canela en rama.', precio: 11 },
+  { id: 9, categoria: 'Postres', img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=80', nombre: 'Suspiro Limeno', desc: 'Suave manjar blanco coronado con merengue de oporto y canela al gusto.', precio: 14 },
+  { id: 10, categoria: 'Postres', img: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&q=80', nombre: 'Arroz con Leche', desc: 'Cremoso arroz cocido en leche con canela, clavo y azucar al gusto.', precio: 12 },
+  { id: 11, categoria: 'Postres', img: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&q=80', nombre: 'Mazamorra Morada', desc: 'Deliciosa mazamorra de maiz morado con frutas secas y canela en rama.', precio: 11 },
   // Bebidas
-  { id: 12, categoria: 'Bebidas', emoji: '🍹', nombre: 'Pisco Sour', desc: 'El cóctel más icónico del Perú: pisco quebranta, limón, clara de huevo y amargo de angostura.', precio: 22 },
-  { id: 13, categoria: 'Bebidas', emoji: '🟣', nombre: 'Chicha Morada', desc: 'Bebida refrescante de maíz morado, piña, membrillo, canela y clavo de olor.', precio: 10 },
-  { id: 14, categoria: 'Bebidas', emoji: '🍊', nombre: 'Maracuyá Frozen', desc: 'Refrescante bebida de maracuyá natural con hielo, menta y un toque de azúcar.', precio: 12 },
+  { id: 12, categoria: 'Bebidas', img: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&q=80', nombre: 'Pisco Sour', desc: 'El coctel mas iconico del Peru: pisco quebranta, limon, clara de huevo y amargo.', precio: 22 },
+  { id: 13, categoria: 'Bebidas', img: 'https://images.unsplash.com/photo-1559181567-c3190900aaef?w=400&q=80', nombre: 'Chicha Morada', desc: 'Bebida refrescante de maiz morado, pina, membrillo, canela y clavo de olor.', precio: 10 },
+  { id: 14, categoria: 'Bebidas', img: 'https://images.unsplash.com/photo-1622597467836-f3e6707e5ff6?w=400&q=80', nombre: 'Maracuya Frozen', desc: 'Refrescante bebida de maracuya natural con hielo, menta y un toque de azucar.', precio: 12 },
 ]
 
 const categorias = ['Todos', 'Entradas', 'Fondos', 'Postres', 'Bebidas']
@@ -37,16 +37,14 @@ export default function MenuPage() {
 
   return (
     <div className="menu-page">
-      {/* Header */}
       <div className="page-header">
         <div className="container">
           <h1 className="page-header__title">Nuestra Carta</h1>
-          <p className="page-header__sub">Descubre los sabores auténticos de la gastronomía peruana</p>
+          <p className="page-header__sub">Descubre los sabores autenticos de la gastronomia peruana</p>
         </div>
       </div>
 
       <div className="container menu-container">
-        {/* Buscador */}
         <div className="menu__search">
           <span className="menu__search-icon">🔍</span>
           <input
@@ -57,11 +55,10 @@ export default function MenuPage() {
             className="menu__search-input"
           />
           {busqueda && (
-            <button className="menu__search-clear" onClick={() => setBusqueda('')}>✕</button>
+            <button className="menu__search-clear" onClick={() => setBusqueda('')}>x</button>
           )}
         </div>
 
-        {/* Filtros */}
         <div className="menu__filters">
           {categorias.map(cat => (
             <button
@@ -69,17 +66,11 @@ export default function MenuPage() {
               className={`menu__filter ${filtro === cat ? 'menu__filter--active' : ''}`}
               onClick={() => setFiltro(cat)}
             >
-              {cat === 'Todos' && '🍽️ '}
-              {cat === 'Entradas' && '🥗 '}
-              {cat === 'Fondos' && '🍛 '}
-              {cat === 'Postres' && '🍮 '}
-              {cat === 'Bebidas' && '🍹 '}
               {cat}
             </button>
           ))}
         </div>
 
-        {/* Resultado */}
         <p className="menu__count">
           {filtered.length} {filtered.length === 1 ? 'plato encontrado' : 'platos encontrados'}
         </p>
@@ -87,13 +78,15 @@ export default function MenuPage() {
         {filtered.length === 0 ? (
           <div className="menu__empty">
             <span>😕</span>
-            <p>No encontramos platos con "{busqueda}". Intenta otra búsqueda.</p>
+            <p>No encontramos platos con "{busqueda}".</p>
           </div>
         ) : (
           <div className="menu__grid">
             {filtered.map(item => (
               <div key={item.id} className="menu-card">
-                <div className="menu-card__emoji">{item.emoji}</div>
+                <div className="menu-card__img-wrap">
+                  <img src={item.img} alt={item.nombre} className="menu-card__img" />
+                </div>
                 <div className="menu-card__body">
                   <div className="menu-card__header">
                     <h3 className="menu-card__name">{item.nombre}</h3>
