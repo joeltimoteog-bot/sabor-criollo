@@ -3,14 +3,14 @@ import { useState, useEffect, useRef } from 'react'
 import './HomePage.css'
 
 const featuredDishes = [
-  { id: 1, emoji: '🍋', name: 'Ceviche Clasico', desc: 'Fresco pescado marinado en limon, aji limo, cebolla morada y choclo.', price: 'S/. 28', category: 'Entrada' },
-  { id: 2, emoji: '🥩', name: 'Lomo Saltado', desc: 'Jugoso lomo de res salteado con verduras, sillao y servido con papas fritas.', price: 'S/. 36', category: 'Fondo' },
-  { id: 3, emoji: '🍗', name: 'Aji de Gallina', desc: 'Tiernos trozos de pollo en cremosa salsa de aji amarillo con nueces y olivas.', price: 'S/. 30', category: 'Fondo' },
-  { id: 4, emoji: '🍮', name: 'Suspiro Limeno', desc: 'El postre mas emblematico del Peru, manjar blanco con merengue de oporto.', price: 'S/. 14', category: 'Postre' },
-  { id: 5, emoji: '🥗', name: 'Causa Limena', desc: 'Papa amarilla sazonada con aji amarillo rellena con atun o pollo desmenuzado.', price: 'S/. 22', category: 'Entrada' },
-  { id: 6, emoji: '🍜', name: 'Chupe de Camarones', desc: 'Sopa cremosa de camarones con leche, huevo y arroz estilo arequipeno.', price: 'S/. 32', category: 'Entrada' },
-  { id: 7, emoji: '🍛', name: 'Seco de Cordero', desc: 'Tierno cordero guisado en cilantro, chicha de jora, zanahoria y frijoles.', price: 'S/. 38', category: 'Fondo' },
-  { id: 8, emoji: '🍹', name: 'Pisco Sour', desc: 'El coctel bandera del Peru: pisco quebranta, limon, jarabe, clara y amargo.', price: 'S/. 22', category: 'Bebida' },
+  { id: 1, img: 'https://images.unsplash.com/photo-1535400255456-984e0e935757?w=400&q=80', name: 'Ceviche Clasico', desc: 'Fresco pescado marinado en limon, aji limo, cebolla morada y choclo.', price: 'S/. 28', category: 'Entrada' },
+  { id: 2, img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&q=80', name: 'Lomo Saltado', desc: 'Jugoso lomo de res salteado con verduras, sillao y servido con papas fritas.', price: 'S/. 36', category: 'Fondo' },
+  { id: 3, img: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80', name: 'Aji de Gallina', desc: 'Tiernos trozos de pollo en cremosa salsa de aji amarillo con nueces y olivas.', price: 'S/. 30', category: 'Fondo' },
+  { id: 4, img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=80', name: 'Suspiro Limeno', desc: 'El postre mas emblematico del Peru, manjar blanco con merengue de oporto.', price: 'S/. 14', category: 'Postre' },
+  { id: 5, img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80', name: 'Causa Limena', desc: 'Papa amarilla sazonada con aji amarillo rellena con atun o pollo desmenuzado.', price: 'S/. 22', category: 'Entrada' },
+  { id: 6, img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80', name: 'Chupe de Camarones', desc: 'Sopa cremosa de camarones con leche, huevo y arroz estilo arequipeno.', price: 'S/. 32', category: 'Entrada' },
+  { id: 7, img: 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&q=80', name: 'Seco de Cordero', desc: 'Tierno cordero guisado en cilantro, chicha de jora, zanahoria y frijoles.', price: 'S/. 38', category: 'Fondo' },
+  { id: 8, img: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&q=80', name: 'Pisco Sour', desc: 'El coctel bandera del Peru: pisco quebranta, limon, jarabe, clara y amargo.', price: 'S/. 22', category: 'Bebida' },
 ]
 
 const heroSlides = [
@@ -67,8 +67,9 @@ export default function HomePage() {
   return (
     <div className="home">
       {/* Hero */}
-      <section className="hero" style={{ background: heroSlides[slide].bg }}>
+      <section className="hero" style={{ background: heroSlides[slide].bg, position: 'relative' }}>
         <div className="hero__overlay" />
+        <img src="/logo.png" alt="Sabor Criollo logo" className="hero__logo-bg" />
         <div className="hero__content animate-fadeInUp">
           <span className="hero__badge">Gastronomia Peruana Autentica</span>
           <h1 className="hero__title">{heroSlides[slide].title}</h1>
@@ -109,12 +110,13 @@ export default function HomePage() {
               style={{ transform: `translateX(-${current * cardWidth}%)` }}
             >
               {featuredDishes.map(dish => (
-                <div
-                  key={dish.id}
+                <div key={dish.id}
                   className="dish-card"
                   style={{ minWidth: `${cardWidth}%` }}
                 >
-                  <div className="dish-card__emoji">{dish.emoji}</div>
+                  <div className="dish-card__img-wrap">
+                    <img src={dish.img} alt={dish.name} className="dish-card__img" />
+                  </div>
                   <span className="dish-card__category">{dish.category}</span>
                   <h3 className="dish-card__name">{dish.name}</h3>
                   <p className="dish-card__desc">{dish.desc}</p>

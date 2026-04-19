@@ -9,7 +9,20 @@
   transition: background 1s ease;
 }
 
-.hero__overlay {
+.hero__logo-bg {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  height: 85%;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.18;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 40px rgba(0,0,0,0.3));
+}
+
+
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(139,46,0,0.3) 100%);
@@ -172,7 +185,26 @@
   box-shadow: var(--shadow-hover);
 }
 
-.dish-card__emoji {
+.dish-card__img-wrap {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.dish-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.dish-card:hover .dish-card__img {
+  transform: scale(1.07);
+}
+
+
   font-size: 2.8rem;
   margin-bottom: 0.8rem;
 }
