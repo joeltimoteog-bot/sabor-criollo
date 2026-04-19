@@ -11,15 +11,15 @@
 
 .hero__logo-bg {
   position: absolute;
-  right: 5%;
-  bottom: 0;
-  height: 85%;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.18;
+  right: 0;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.25;
   z-index: 1;
   pointer-events: none;
-  filter: drop-shadow(0 0 40px rgba(0,0,0,0.3));
 }
 
 .hero__overlay {
