@@ -158,13 +158,15 @@ export default function HomePage() {
           <div className="section-divider" />
           <div className="why__grid">
             {[
-              { icon: '👨‍🍳', title: 'Chefs Expertos', desc: 'Nuestros cocineros tienen mas de 15 anos de experiencia en gastronomia peruana.' },
-              { icon: '🥬', title: 'Ingredientes Frescos', desc: 'Trabajamos directamente con productores locales para garantizar calidad en cada plato.' },
-              { icon: '🏆', title: 'Premio a la Excelencia', desc: 'Reconocidos como uno de los mejores restaurantes criollos de la ciudad.' },
-              { icon: '❤️', title: 'Con Amor Peruano', desc: 'Cada receta lleva la tradicion y el sabor autentico de la cocina peruana.' },
+              { img: 'https://images.unsplash.com/photo-1583394293214-0a2faca2f1e4?w=400', title: 'Chefs Expertos', desc: 'Nuestros cocineros tienen mas de 15 anos de experiencia en gastronomia peruana.' },
+              { img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=400', title: 'Ingredientes Frescos', desc: 'Trabajamos directamente con productores locales para garantizar calidad en cada plato.' },
+              { img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400', title: 'Premio a la Excelencia', desc: 'Reconocidos como uno de los mejores restaurantes criollos de la ciudad.' },
+              { img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400', title: 'Con Amor Peruano', desc: 'Cada receta lleva la tradicion y el sabor autentico de la cocina peruana.' },
             ].map((item, i) => (
               <div key={i} className="why__card">
-                <div className="why__icon">{item.icon}</div>
+                <div className="why__card__img-wrap">
+                  <img src={item.img} alt={item.title} className="why__card__img" />
+                </div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
