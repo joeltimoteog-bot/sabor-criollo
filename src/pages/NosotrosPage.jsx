@@ -1,10 +1,10 @@
 import './NosotrosPage.css'
 
 const valores = [
-  { icon: '🌿', titulo: 'Autenticidad', desc: 'Preservamos las recetas originales de la cocina criolla peruana, sin modificar sus sabores tradicionales.' },
-  { icon: '❤️', titulo: 'Pasion', desc: 'Cada plato se prepara con dedicacion y amor, siguiendo el legado gastronomico de nuestros ancestros.' },
-  { icon: '🤝', titulo: 'Comunidad', desc: 'Apoyamos a productores locales y agricultores de la region para garantizar insumos de primera calidad.' },
-  { icon: '✨', titulo: 'Excelencia', desc: 'Nos comprometemos a brindar la mejor experiencia gastronomica en cada visita de nuestros comensales.' },
+  { img: 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400', titulo: 'Autenticidad', desc: 'Preservamos las recetas originales de la cocina criolla peruana, sin modificar sus sabores tradicionales.' },
+  { img: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400', titulo: 'Pasion', desc: 'Cada plato se prepara con dedicacion y amor, siguiendo el legado gastronomico de nuestros ancestros.' },
+  { img: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400', titulo: 'Comunidad', desc: 'Apoyamos a productores locales y agricultores de la region para garantizar insumos de primera calidad.' },
+  { img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400', titulo: 'Excelencia', desc: 'Nos comprometemos a brindar la mejor experiencia gastronomica en cada visita de nuestros comensales.' },
 ]
 
 const equipo = [
@@ -72,7 +72,9 @@ export default function NosotrosPage() {
           <div className="valores__grid">
             {valores.map((v, i) => (
               <div key={i} className="valor-card">
-                <div className="valor-card__icon">{v.icon}</div>
+                <div className="valor-card__img-wrap">
+                  <img src={v.img} alt={v.titulo} className="valor-card__img" />
+                </div>
                 <h3>{v.titulo}</h3>
                 <p>{v.desc}</p>
               </div>

@@ -94,7 +94,24 @@
   transform: translateY(-4px);
 }
 
-.valor-card__icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.valor-card__img-wrap {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.valor-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.valor-card:hover .valor-card__img {
+  transform: scale(1.05);
+}
 .valor-card h3 { color: var(--accent); margin-bottom: 0.7rem; font-family: var(--font-title); }
 .valor-card p { color: rgba(255,255,255,0.75); font-size: 0.9rem; line-height: 1.6; }
 
