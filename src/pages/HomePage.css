@@ -11,12 +11,14 @@
 
 .hero__logo-bg {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* clave para que se adapte */
-  opacity: 0.22;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 0.15;
   z-index: 1;
   pointer-events: none;
 }
