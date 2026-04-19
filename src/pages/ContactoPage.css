@@ -1,0 +1,171 @@
+.contacto-container {
+  padding: 3rem 1.5rem 5rem;
+}
+
+.contacto-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.contacto-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.contacto-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-hover);
+}
+
+.contacto-card__icon { font-size: 2rem; margin-bottom: 0.7rem; }
+.contacto-card h4 { font-family: var(--font-title); color: var(--primary); margin-bottom: 0.4rem; }
+.contacto-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+
+.contacto-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+/* Mapa */
+.contacto-map {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.contacto-map h3 {
+  font-family: var(--font-title);
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+
+.contacto-map__embed {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.contacto-map__social h4 {
+  color: var(--primary);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.contacto-map__social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contacto-map__social-links span {
+  font-size: 0.88rem;
+  color: var(--gray);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Form */
+.contacto-form-wrapper {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.contacto-form-wrapper h3 {
+  font-family: var(--font-title);
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.contacto-success {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.contacto-success__icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+.contacto-success p { color: var(--gray); margin-bottom: 2rem; line-height: 1.7; }
+
+/* Reuse form-group styles from ReservasPage */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label { font-size: 0.88rem; font-weight: 600; color: var(--dark); }
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--dark);
+  background: var(--white);
+  transition: var(--transition);
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(212,98,42,0.1);
+}
+
+.form-group--error input,
+.form-group--error textarea { border-color: #dc2626; }
+.form-group--success input,
+.form-group--success textarea { border-color: #16a34a; }
+.form-error { font-size: 0.8rem; color: #dc2626; font-weight: 500; }
+
+.reservas-submit {
+  width: 100%;
+  padding: 1rem;
+  background: var(--secondary);
+  color: var(--white);
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.reservas-submit:hover:not(:disabled) {
+  background: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-row .form-group { margin-bottom: 0; }
+
+@media (max-width: 768px) {
+  .contacto-layout { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,145 @@
+/* ═══════════════════════════════════════════════
+   SABOR CRIOLLO - Estilos Globales
+   ═══════════════════════════════════════════════ */
+
+:root {
+  --primary: #8B2E00;
+  --secondary: #D4622A;
+  --accent: #F5A623;
+  --light: #FFF8F0;
+  --dark: #1A0A00;
+  --gray: #6B5B4E;
+  --card-bg: #FEF3E8;
+  --white: #ffffff;
+  --border: #E8D5C0;
+  --font-title: 'Georgia', serif;
+  --font-body: 'Calibri', 'Segoe UI', sans-serif;
+  --shadow: 0 4px 20px rgba(139, 46, 0, 0.12);
+  --shadow-hover: 0 8px 30px rgba(139, 46, 0, 0.22);
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  outline: none;
+}
+
+/* ── Utilidades ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--gray);
+  font-size: 1.05rem;
+  margin-bottom: 3rem;
+}
+
+.section-divider {
+  width: 70px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0.8rem auto 1.5rem;
+  border-radius: 2px;
+}
+
+.btn-primary {
+  background: var(--secondary);
+  color: var(--white);
+  padding: 0.85rem 2.2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  padding: 0.85rem 2.2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid var(--white);
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+
+/* ── Animaciones ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .section-title { font-size: 1.7rem; }
+}

@@ -1,0 +1,178 @@
+.page-header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 8rem 1.5rem 3.5rem;
+  text-align: center;
+}
+
+.page-header__title {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.page-header__sub {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.05rem;
+}
+
+.menu-container {
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.menu__search {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto 2rem;
+}
+
+.menu__search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}
+
+.menu__search-input {
+  width: 100%;
+  padding: 0.85rem 3rem;
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.97rem;
+  background: var(--white);
+  transition: var(--transition);
+  color: var(--dark);
+}
+
+.menu__search-input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(212,98,42,0.12);
+}
+
+.menu__search-clear {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: var(--gray);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.menu__filters {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.menu__filter {
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  border: 2px solid var(--border);
+  background: var(--white);
+  color: var(--gray);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.menu__filter:hover {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.menu__filter--active {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--white);
+}
+
+.menu__count {
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.88rem;
+  margin-bottom: 2rem;
+}
+
+.menu__empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--gray);
+}
+
+.menu__empty span { font-size: 3rem; display: block; margin-bottom: 1rem; }
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--secondary);
+}
+
+.menu-card__emoji {
+  font-size: 2.4rem;
+  flex-shrink: 0;
+}
+
+.menu-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.menu-card__name {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+.menu-card__cat {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--card-bg);
+  color: var(--secondary);
+  padding: 0.2rem 0.55rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.menu-card__desc {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+.menu-card__price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
