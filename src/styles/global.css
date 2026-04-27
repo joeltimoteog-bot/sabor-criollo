@@ -1,52 +1,63 @@
 /* ═══════════════════════════════════════════════
    SABOR CRIOLLO - Estilos Globales
+   Hoja de estilos base que define variables, reset
+   y utilidades reutilizables en toda la aplicación.
    ═══════════════════════════════════════════════ */
 
+/* ── Variables CSS personalizadas (Custom Properties) ──
+   Definidas en :root para que estén disponibles en toda la app.
+   Centralizan colores, tipografías, sombras y transiciones para mantener consistencia. */
 :root {
-  --primary: #8B2E00;
-  --secondary: #D4622A;
-  --accent: #F5A623;
-  --light: #FFF8F0;
-  --dark: #1A0A00;
-  --gray: #6B5B4E;
-  --card-bg: #FEF3E8;
+  --primary: #8B2E00;          /* Color principal: vino/marrón profundo */
+  --secondary: #D4622A;        /* Color secundario: naranja oscuro */
+  --accent: #F5A623;           /* Color de acento: naranja claro/amarillo */
+  --light: #FFF8F0;            /* Fondo claro de la página */
+  --dark: #1A0A00;             /* Texto oscuro */
+  --gray: #6B5B4E;             /* Gris para textos secundarios */
+  --card-bg: #FEF3E8;           /* Fondo claro para tarjetas */
   --white: #ffffff;
-  --border: #E8D5C0;
-  --font-title: 'Georgia', serif;
-  --font-body: 'Calibri', 'Segoe UI', sans-serif;
-  --shadow: 0 4px 20px rgba(139, 46, 0, 0.12);
-  --shadow-hover: 0 8px 30px rgba(139, 46, 0, 0.22);
-  --radius: 12px;
-  --transition: all 0.3s ease;
+  --border: #E8D5C0;            /* Color de bordes suaves */
+  --font-title: 'Georgia', serif;             /* Tipografía para títulos */
+  --font-body: 'Calibri', 'Segoe UI', sans-serif; /* Tipografía para texto general */
+  --shadow: 0 4px 20px rgba(139, 46, 0, 0.12);     /* Sombra sutil */
+  --shadow-hover: 0 8px 30px rgba(139, 46, 0, 0.22); /* Sombra más marcada al hover */
+  --radius: 12px;              /* Radio de borde estándar */
+  --transition: all 0.3s ease; /* Transición uniforme */
 }
 
+/* ── Reset universal: elimina márgenes y paddings por defecto del navegador ── */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;      /* El padding y border se incluyen en el ancho total */
 }
 
+/* ── Comportamiento global del HTML ── */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;     /* Scroll suave al navegar con anchors */
 }
 
+/* ── Estilos base del body ── */
 body {
   font-family: var(--font-body);
   background-color: var(--light);
   color: var(--dark);
-  line-height: 1.6;
+  line-height: 1.6;            /* Mejora la legibilidad del texto */
 }
 
+/* ── Reset de enlaces: sin subrayado y heredan color ── */
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* ── Imágenes responsivas por defecto ── */
 img {
-  max-width: 100%;
-  display: block;
+  max-width: 100%;             /* Nunca se desborda del contenedor */
+  display: block;              /* Elimina el espacio extra debajo de las imágenes inline */
 }
 
+/* ── Reset de los botones ── */
 button {
   cursor: pointer;
   border: none;
@@ -54,18 +65,22 @@ button {
   font-family: var(--font-body);
 }
 
+/* ── Reset de inputs y áreas de texto ── */
 input, textarea, select {
   font-family: var(--font-body);
   outline: none;
 }
 
-/* ── Utilidades ── */
+/* ── Utilidades de layout ── */
+
+/* Contenedor centrado con ancho máximo (similar a Bootstrap) */
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto;              /* Centrado horizontal */
   padding: 0 1.5rem;
 }
 
+/* Título de sección reutilizable */
 .section-title {
   font-family: var(--font-title);
   font-size: 2.2rem;
@@ -74,6 +89,7 @@ input, textarea, select {
   margin-bottom: 0.5rem;
 }
 
+/* Subtítulo descriptivo de sección */
 .section-subtitle {
   text-align: center;
   color: var(--gray);
@@ -81,19 +97,21 @@ input, textarea, select {
   margin-bottom: 3rem;
 }
 
+/* Línea divisoria decorativa centrada (debajo de los títulos) */
 .section-divider {
   width: 70px;
   height: 4px;
   background: var(--accent);
-  margin: 0.8rem auto 1.5rem;
+  margin: 0.8rem auto 1.5rem;  /* auto centra horizontalmente */
   border-radius: 2px;
 }
 
+/* ── Botón principal reutilizable ── */
 .btn-primary {
   background: var(--secondary);
   color: var(--white);
   padding: 0.85rem 2.2rem;
-  border-radius: 50px;
+  border-radius: 50px;          /* Forma de píldora */
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -101,12 +119,14 @@ input, textarea, select {
   display: inline-block;
 }
 
+/* Hover: cambia color y se eleva con sombra */
 .btn-primary:hover {
   background: var(--primary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
 
+/* ── Botón con borde (sin relleno) ── */
 .btn-outline {
   background: transparent;
   color: var(--white);
@@ -119,27 +139,32 @@ input, textarea, select {
   display: inline-block;
 }
 
+/* Hover: invierte colores (relleno blanco con texto vino) */
 .btn-outline:hover {
   background: var(--white);
   color: var(--primary);
 }
 
-/* ── Animaciones ── */
+/* ── Animaciones globales (keyframes) ── */
+
+/* Aparece desde abajo con un fade in */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Fade in simple: solo opacidad */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+/* Clase utilitaria para aplicar la animación fadeInUp */
 .animate-fadeInUp {
-  animation: fadeInUp 0.7s ease forwards;
+  animation: fadeInUp 0.7s ease forwards; /* "forwards" mantiene el estado final */
 }
 
-/* ── Responsive ── */
+/* ── Responsive global: ajustes en móvil ── */
 @media (max-width: 768px) {
-  .section-title { font-size: 1.7rem; }
+  .section-title { font-size: 1.7rem; }   /* Títulos más pequeños en móvil */
 }

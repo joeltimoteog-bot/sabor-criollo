@@ -1,9 +1,11 @@
+/* ── Cabecera reutilizable de páginas internas (con gradiente) ── */
 .page-header {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  padding: 8rem 1.5rem 3.5rem;
+  padding: 8rem 1.5rem 3.5rem;  /* Padding superior grande para compensar la navbar fija */
   text-align: center;
 }
 
+/* Título principal de la cabecera de página */
 .page-header__title {
   font-family: var(--font-title);
   font-size: 2.8rem;
@@ -11,46 +13,53 @@
   margin-bottom: 0.5rem;
 }
 
+/* Subtítulo descriptivo de la cabecera */
 .page-header__sub {
   color: rgba(255,255,255,0.8);
   font-size: 1.05rem;
 }
 
+/* ── Contenedor del menú: padding superior e inferior ── */
 .menu-container {
   padding-top: 2.5rem;
   padding-bottom: 4rem;
 }
 
+/* ── Caja de búsqueda ── */
 .menu__search {
-  position: relative;
+  position: relative;            /* Para posicionar el ícono y el botón "x" */
   max-width: 480px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2rem;           /* Centrada horizontalmente */
 }
 
+/* Ícono lupa dentro del input */
 .menu__search-icon {
   position: absolute;
   left: 1rem;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%);   /* Centrado vertical */
   font-size: 1rem;
 }
 
+/* Input de búsqueda */
 .menu__search-input {
   width: 100%;
-  padding: 0.85rem 3rem;
+  padding: 0.85rem 3rem;         /* Espacio extra para ícono y botón */
   border: 2px solid var(--border);
-  border-radius: 50px;
+  border-radius: 50px;           /* Forma de píldora */
   font-size: 0.97rem;
   background: var(--white);
   transition: var(--transition);
   color: var(--dark);
 }
 
+/* Estado focus: borde naranja y halo de color */
 .menu__search-input:focus {
   border-color: var(--secondary);
   box-shadow: 0 0 0 3px rgba(212,98,42,0.12);
 }
 
+/* Botón "x" para limpiar la búsqueda */
 .menu__search-clear {
   position: absolute;
   right: 1rem;
@@ -63,14 +72,16 @@
   border: none;
 }
 
+/* ── Botones de filtros por categoría ── */
 .menu__filters {
   display: flex;
   gap: 0.8rem;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap;               /* Saltan a otra fila si no caben */
   margin-bottom: 1.5rem;
 }
 
+/* Botón individual de filtro */
 .menu__filter {
   padding: 0.55rem 1.4rem;
   border-radius: 50px;
@@ -83,17 +94,20 @@
   transition: var(--transition);
 }
 
+/* Hover del filtro: cambia color a naranja */
 .menu__filter:hover {
   border-color: var(--secondary);
   color: var(--secondary);
 }
 
+/* Estado activo del filtro: relleno naranja */
 .menu__filter--active {
   background: var(--secondary);
   border-color: var(--secondary);
   color: var(--white);
 }
 
+/* Texto contador de resultados */
 .menu__count {
   text-align: center;
   color: var(--gray);
@@ -101,6 +115,7 @@
   margin-bottom: 2rem;
 }
 
+/* ── Estado vacío: cuando no hay resultados ── */
 .menu__empty {
   text-align: center;
   padding: 4rem 1rem;
@@ -109,29 +124,33 @@
 
 .menu__empty span { font-size: 3rem; display: block; margin-bottom: 1rem; }
 
+/* ── Grilla responsive de tarjetas: mínimo 300px por columna ── */
 .menu__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.8rem;
 }
 
+/* ── Tarjeta de plato ── */
 .menu-card {
   background: var(--white);
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  overflow: hidden;
+  overflow: hidden;              /* Evita que el zoom de la imagen rompa los bordes */
   transition: var(--transition);
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
 }
 
+/* Contenedor de imagen del plato */
 .menu-card__img-wrap {
   width: 100%;
   height: 200px;
   overflow: hidden;
 }
 
+/* Imagen del plato */
 .menu-card__img {
   width: 100%;
   height: 100%;
@@ -139,13 +158,15 @@
   transition: transform 0.4s ease;
 }
 
+/* Zoom de la imagen al hacer hover en la tarjeta */
 .menu-card:hover .menu-card__img {
   transform: scale(1.06);
 }
 
+/* Cuerpo textual de la tarjeta */
 .menu-card__body {
   padding: 1.2rem 1.4rem;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1;                       /* Crece para igualar alturas en la grilla */
 }

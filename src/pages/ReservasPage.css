@@ -1,24 +1,27 @@
+/* ── Contenedor general del formulario de reservas ── */
 .reservas-container {
   padding: 3rem 1.5rem 5rem;
 }
 
+/* Layout en dos columnas: panel info (izq) + formulario (der) */
 .reservas-layout {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 320px 1fr;  /* Ancho fijo del sidebar + resto */
   gap: 2.5rem;
   align-items: start;
 }
 
-/* Sidebar info */
+/* ── Sidebar de información del restaurante ── */
 .reservas-info {
-  background: var(--primary);
+  background: var(--primary);    /* Fondo color institucional */
   color: var(--white);
   border-radius: var(--radius);
   padding: 2rem;
-  position: sticky;
-  top: 90px;
+  position: sticky;              /* Se queda fijo al hacer scroll */
+  top: 90px;                     /* Compensa la altura de la navbar */
 }
 
+/* Título del sidebar */
 .reservas-info h3 {
   font-family: var(--font-title);
   font-size: 1.15rem;
@@ -28,19 +31,22 @@
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
+/* Cada item de información (icono + texto) */
 .reservas-info__item {
   display: flex;
   gap: 0.9rem;
   margin-bottom: 1.3rem;
 }
 
+/* Estilos compactos para los componentes internos del item */
 .reservas-info__item span { font-size: 1.3rem; flex-shrink: 0; }
 .reservas-info__item strong { display: block; font-size: 0.9rem; margin-bottom: 0.2rem; color: var(--accent); }
 .reservas-info__item p { font-size: 0.87rem; color: rgba(255,255,255,0.78); line-height: 1.5; }
 
+/* Caja de nota importante destacada con borde lateral */
 .reservas-info__note {
   background: rgba(255,255,255,0.08);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--accent); /* Borde de acento solo a la izquierda */
   padding: 1rem;
   border-radius: 0 var(--radius) var(--radius) 0;
   margin-top: 1.5rem;
@@ -49,7 +55,7 @@
 .reservas-info__note strong { display: block; font-size: 0.88rem; margin-bottom: 0.4rem; color: var(--accent); }
 .reservas-info__note p { font-size: 0.83rem; color: rgba(255,255,255,0.72); line-height: 1.5; }
 
-/* Form */
+/* ── Wrapper del formulario ── */
 .reservas-form-wrapper {
   background: var(--white);
   border-radius: var(--radius);
@@ -58,6 +64,7 @@
   border: 1px solid var(--border);
 }
 
+/* Título del formulario */
 .reservas-form__title {
   font-family: var(--font-title);
   font-size: 1.4rem;
@@ -67,6 +74,7 @@
   border-bottom: 2px solid var(--border);
 }
 
+/* ── Filas del formulario: dos columnas iguales ── */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -74,6 +82,7 @@
   margin-bottom: 1.2rem;
 }
 
+/* ── Grupo de campo individual (label + input + error) ── */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -81,14 +90,17 @@
   margin-bottom: 1.2rem;
 }
 
+/* Cuando el group está dentro de form-row, no necesita margen extra */
 .form-row .form-group { margin-bottom: 0; }
 
+/* Etiqueta del campo */
 .form-group label {
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--dark);
 }
 
+/* Estilos compartidos para todos los inputs, selects y textareas */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -101,6 +113,7 @@
   transition: var(--transition);
 }
 
+/* Estado focus: borde naranja y halo de color */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -108,23 +121,27 @@
   box-shadow: 0 0 0 3px rgba(212,98,42,0.1);
 }
 
+/* Estado de error: borde rojo */
 .form-group--error input,
 .form-group--error select,
 .form-group--error textarea {
   border-color: #dc2626;
 }
 
+/* Estado de éxito (validación pasada): borde verde */
 .form-group--success input,
 .form-group--success select {
   border-color: #16a34a;
 }
 
+/* Mensaje de error pequeño debajo del campo */
 .form-error {
   font-size: 0.8rem;
   color: #dc2626;
   font-weight: 500;
 }
 
+/* ── Botón de envío del formulario ── */
 .reservas-submit {
   width: 100%;
   padding: 1rem;
@@ -137,21 +154,23 @@
   margin-top: 0.5rem;
 }
 
+/* Hover del botón (solo cuando no está deshabilitado) */
 .reservas-submit:hover:not(:disabled) {
   background: var(--primary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
 
+/* Estado de loading: opaco y con cursor de espera */
 .reservas-submit--loading {
   opacity: 0.8;
   cursor: not-allowed;
 }
 
-/* Success */
+/* ── Pantalla de éxito tras el envío ── */
 .reservas-success {
   max-width: 580px;
-  margin: 0 auto;
+  margin: 0 auto;                /* Centrada horizontalmente */
   background: var(--white);
   border-radius: var(--radius);
   padding: 3.5rem 2.5rem;
@@ -160,10 +179,12 @@
   border: 1px solid var(--border);
 }
 
+/* Icono grande de celebración */
 .reservas-success__icon { font-size: 4rem; margin-bottom: 1rem; }
 .reservas-success h2 { font-family: var(--font-title); font-size: 1.8rem; color: var(--primary); margin-bottom: 0.8rem; }
 .reservas-success > p { color: var(--gray); margin-bottom: 1.5rem; }
 
+/* Caja con detalles de la reserva confirmada */
 .reservas-success__detail {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -176,6 +197,7 @@
   gap: 0.6rem;
 }
 
+/* Cada línea de detalle (icono + texto) */
 .reservas-success__detail div {
   font-size: 0.95rem;
   color: var(--dark);
@@ -184,14 +206,16 @@
   align-items: center;
 }
 
+/* Nota informativa final */
 .reservas-success__note {
   color: var(--gray);
   font-size: 0.9rem;
   margin-bottom: 2rem;
 }
 
+/* ── Responsive: en pantallas medianas el layout se apila ── */
 @media (max-width: 900px) {
-  .reservas-layout { grid-template-columns: 1fr; }
-  .reservas-info { position: static; }
-  .form-row { grid-template-columns: 1fr; }
+  .reservas-layout { grid-template-columns: 1fr; }     /* Una sola columna */
+  .reservas-info { position: static; }                  /* Sidebar deja de ser sticky */
+  .form-row { grid-template-columns: 1fr; }            /* Filas de un solo campo */
 }

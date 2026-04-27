@@ -1,18 +1,21 @@
+/* ── Contenedor principal del pie de página ── */
 .footer {
-  background: var(--primary);
-  color: rgba(255,255,255,0.85);
+  background: var(--primary);          /* Color de fondo institucional (vino) */
+  color: rgba(255,255,255,0.85);       /* Texto blanco con leve transparencia */
   padding-top: 3.5rem;
-  margin-top: 5rem;
+  margin-top: 5rem;                    /* Separación con el contenido superior */
 }
 
+/* ── Grilla principal de tres columnas (marca, navegación, horarios) ── */
 .footer__grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;  /* Primera columna más ancha (marca) */
   gap: 3rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15); /* Separador inferior sutil */
 }
 
+/* ── Logo del pie de página ── */
 .footer__logo {
   font-family: var(--font-title);
   font-size: 1.4rem;
@@ -20,6 +23,7 @@
   margin-bottom: 1rem;
 }
 
+/* Texto descriptivo de la marca */
 .footer__brand p {
   font-size: 0.92rem;
   line-height: 1.7;
@@ -27,28 +31,32 @@
   margin-bottom: 1.2rem;
 }
 
+/* ── Iconos de redes sociales ── */
 .footer__socials {
   display: flex;
   gap: 0.8rem;
   font-size: 1.4rem;
-  cursor: pointer;
+  cursor: pointer; /* Cursor de mano para indicar interactividad */
 }
 
+/* ── Títulos de cada columna del footer ── */
 .footer__col h4 {
-  color: var(--accent);
+  color: var(--accent);          /* Color de acento (naranja) */
   font-size: 1rem;
   margin-bottom: 1rem;
-  text-transform: uppercase;
+  text-transform: uppercase;     /* Mayúsculas para resaltar */
   letter-spacing: 1px;
 }
 
+/* ── Listas dentro de cada columna ── */
 .footer__col ul {
-  list-style: none;
+  list-style: none;       /* Quita los puntos por defecto de las listas */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
+/* Estilos compartidos para items y enlaces de las listas */
 .footer__col ul li,
 .footer__col ul a {
   color: rgba(255,255,255,0.72);
@@ -56,10 +64,12 @@
   transition: var(--transition);
 }
 
+/* Hover en los enlaces: color de acento */
 .footer__col ul a:hover {
   color: var(--accent);
 }
 
+/* ── Línea de créditos al final del footer ── */
 .footer__bottom {
   text-align: center;
   padding: 1.2rem 0;
@@ -67,9 +77,10 @@
   font-size: 0.82rem;
 }
 
+/* ── Responsive: en móvil las columnas se apilan ── */
 @media (max-width: 768px) {
   .footer__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una sola columna */
     gap: 2rem;
   }
 }

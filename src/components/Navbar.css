@@ -1,26 +1,30 @@
+/* ── Barra de navegación principal (estado por defecto, sin scroll) ── */
 .navbar {
-  position: fixed;
+  position: fixed;       /* Fija la barra en la parte superior incluso al hacer scroll */
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1000;         /* Garantiza que la barra quede por encima del resto del contenido */
   padding: 1.1rem 0;
-  background: transparent;
-  transition: all 0.4s ease;
+  background: transparent; /* Inicialmente transparente para integrarse con el hero */
+  transition: all 0.4s ease; /* Suaviza los cambios al hacer scroll */
 }
 
+/* ── Estado de la barra cuando el usuario ha hecho scroll ── */
 .navbar--scrolled {
-  background: var(--primary);
-  padding: 0.7rem 0;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  background: var(--primary); /* Cambia a color sólido al hacer scroll */
+  padding: 0.7rem 0;          /* Reduce la altura para hacerla más compacta */
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25); /* Sombra para destacar la barra */
 }
 
+/* ── Contenedor interno: distribuye logo, enlaces y hamburguesa ── */
 .navbar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Logo a la izquierda, navegación a la derecha */
 }
 
+/* ── Logo y nombre del restaurante (enlace a inicio) ── */
 .navbar__brand {
   display: flex;
   align-items: center;
@@ -28,10 +32,12 @@
   color: var(--white);
 }
 
+/* Ícono del logo (emoji) */
 .navbar__icon {
   font-size: 1.6rem;
 }
 
+/* Texto "Sabor Criollo" del logo */
 .navbar__title {
   font-family: var(--font-title);
   font-size: 1.3rem;
@@ -40,12 +46,14 @@
   color: var(--white);
 }
 
+/* ── Contenedor de enlaces de navegación ── */
 .navbar__links {
   display: flex;
   align-items: center;
   gap: 0.3rem;
 }
 
+/* ── Enlace individual del menú ── */
 .navbar__link {
   color: rgba(255,255,255,0.88);
   padding: 0.45rem 0.9rem;
@@ -55,35 +63,40 @@
   transition: var(--transition);
 }
 
+/* Estado hover y enlace activo: fondo translúcido más visible */
 .navbar__link:hover,
 .navbar__link--active {
   color: var(--white);
   background: rgba(255,255,255,0.15);
 }
 
+/* El enlace activo además se pinta con el color de acento */
 .navbar__link--active {
   color: var(--accent);
 }
 
+/* ── Botón llamativo "Reservar Mesa" ── */
 .navbar__cta {
   background: var(--accent);
-  color: var(--dark) !important;
+  color: var(--dark) !important; /* !important para sobrescribir color heredado del Link */
   padding: 0.5rem 1.2rem;
-  border-radius: 50px;
+  border-radius: 50px;            /* Forma de píldora */
   font-weight: 700;
   font-size: 0.9rem;
   margin-left: 0.5rem;
   transition: var(--transition);
 }
 
+/* Hover del botón CTA: cambia a fondo blanco con texto vino */
 .navbar__cta:hover {
   background: var(--white);
   color: var(--primary) !important;
-  transform: translateY(-1px);
+  transform: translateY(-1px); /* Pequeño desplazamiento para feedback visual */
 }
 
+/* ── Botón hamburguesa (solo visible en móvil) ── */
 .navbar__hamburger {
-  display: none;
+  display: none;            /* Oculto en escritorio; el media query lo muestra en móvil */
   flex-direction: column;
   gap: 5px;
   background: none;
@@ -91,6 +104,7 @@
   cursor: pointer;
 }
 
+/* Cada una de las tres líneas del icono hamburguesa */
 .navbar__hamburger span {
   display: block;
   width: 25px;
@@ -100,18 +114,21 @@
   transition: var(--transition);
 }
 
+/* Animación al abrir: las líneas forman una "X" */
 .navbar__hamburger--open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.navbar__hamburger--open span:nth-child(2) { opacity: 0; }
+.navbar__hamburger--open span:nth-child(2) { opacity: 0; } /* La línea del medio desaparece */
 .navbar__hamburger--open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+/* ── Responsive: comportamiento en pantallas pequeñas ── */
 @media (max-width: 768px) {
   .navbar {
-    background: var(--primary);
+    background: var(--primary); /* En móvil siempre con fondo sólido */
     padding: 0.8rem 0;
   }
 
-  .navbar__hamburger { display: flex; }
+  .navbar__hamburger { display: flex; } /* Muestra el botón hamburguesa */
 
+  /* Convierte el menú en un panel desplegable que aparece bajo la barra */
   .navbar__links {
     position: fixed;
     top: 65px;
@@ -121,17 +138,19 @@
     flex-direction: column;
     padding: 1.5rem;
     gap: 0.5rem;
-    transform: translateY(-120%);
+    transform: translateY(-120%); /* Oculto fuera de pantalla por defecto */
     opacity: 0;
     transition: all 0.35s ease;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   }
 
+  /* Estado abierto: el menú entra a la vista */
   .navbar__links--open {
     transform: translateY(0);
     opacity: 1;
   }
 
+  /* Cada enlace ocupa el ancho completo en móvil para mejor toque */
   .navbar__link { width: 100%; text-align: center; padding: 0.7rem; }
   .navbar__cta { width: 100%; text-align: center; margin-left: 0; margin-top: 0.5rem; }
 }

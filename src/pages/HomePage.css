@@ -1,63 +1,69 @@
-/* ── Hero ── */
+/* ── Hero: banner principal a pantalla completa ── */
 .hero {
-  min-height: 100vh;
+  min-height: 100vh;          /* Ocupa toda la altura del viewport */
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-  transition: background 1s ease;
+  position: relative;         /* Permite posicionar elementos absolutos hijos */
+  overflow: hidden;           /* Recorta cualquier contenido que se salga */
+  transition: background 1s ease; /* Animación suave al cambiar el slide */
 }
 
+/* ── Logo decorativo grande de fondo ── */
 .hero__logo-bg {
   position: absolute;
   top: 65%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Centrado horizontal y vertical */
   width: 90%;
   height: 90%;
-  object-fit: contain;
+  object-fit: contain;        /* Mantiene proporción sin recortar */
   object-position: center bottom;
-  opacity: 0.15;
+  opacity: 0.15;              /* Muy transparente para servir solo como fondo */
   z-index: 1;
-  pointer-events: none;
+  pointer-events: none;       /* No bloquea clics en el contenido encima */
 }
 
+/* ── Capa oscura superpuesta para mejorar contraste del texto ── */
 .hero__overlay {
   position: absolute;
-  inset: 0;
+  inset: 0;                   /* Cubre todo el contenedor padre */
   background: linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(139,46,0,0.3) 100%);
 }
 
+/* ── Contenido textual del hero (texto y botones) ── */
 .hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 2;                 /* Por encima del overlay y el logo */
   text-align: center;
   max-width: 760px;
   padding: 0 1.5rem;
 }
 
+/* ── Etiqueta superior tipo "badge" sobre el título ── */
 .hero__badge {
   display: inline-block;
   background: rgba(245,166,35,0.9);
   color: #1A0A00;
   padding: 0.4rem 1.2rem;
-  border-radius: 50px;
+  border-radius: 50px;        /* Forma de píldora */
   font-size: 0.88rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   letter-spacing: 0.5px;
 }
 
+/* ── Título principal del hero ── */
 .hero__title {
   font-family: var(--font-title);
   font-size: 3.5rem;
   color: var(--white);
   line-height: 1.15;
   margin-bottom: 1.2rem;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3); /* Sombra para legibilidad */
 }
 
+/* ── Subtítulo descriptivo del hero ── */
 .hero__subtitle {
   font-size: 1.2rem;
   color: rgba(255,255,255,0.88);
@@ -65,57 +71,65 @@
   line-height: 1.6;
 }
 
+/* ── Contenedor de los botones del hero ── */
 .hero__actions {
   display: flex;
   gap: 1.2rem;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap;            /* Se acomoda en varias líneas si no caben */
 }
 
+/* ── Indicadores (dots) del slider del hero ── */
 .hero__dots {
   position: absolute;
   bottom: 2rem;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Centrado horizontal */
   display: flex;
   gap: 0.5rem;
   z-index: 2;
 }
 
+/* Cada punto individual */
 .hero__dot {
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: 50%;          /* Forma circular */
   background: rgba(255,255,255,0.4);
   border: none;
   cursor: pointer;
   transition: var(--transition);
 }
 
+/* Punto activo: cambia color y se agranda */
 .hero__dot--active {
   background: var(--accent);
   transform: scale(1.25);
 }
 
+/* ── Indicador animado de scroll en la esquina inferior ── */
 .hero__scroll {
   position: absolute;
   bottom: 2rem;
   right: 2rem;
   color: rgba(255,255,255,0.5);
   font-size: 1.2rem;
-  animation: bounce 2s infinite;
+  animation: bounce 2s infinite; /* Animación continua de rebote */
   z-index: 2;
 }
 
+/* Animación de rebote vertical para el indicador de scroll */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(8px); }
 }
 
+/* ── Sección "Platos Estrella" ── */
 .featured {
   padding: 5rem 1.5rem;
 }
 
+/* ── Contenedor del carrusel (flechas + ventana) ── */
 .carousel {
   position: relative;
   display: flex;
@@ -124,21 +138,24 @@
   margin-bottom: 1.5rem;
 }
 
+/* Ventana visible del carrusel: oculta lo que está fuera */
 .carousel__window {
   overflow: hidden;
   width: 100%;
 }
 
+/* Track interno que se desplaza con transform */
 .carousel__track {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease; /* Animación suave al cambiar de slide */
 }
 
+/* ── Flechas de navegación del carrusel ── */
 .carousel__arrow {
   flex-shrink: 0;
   width: 42px;
   height: 42px;
-  border-radius: 50%;
+  border-radius: 50%;          /* Botón circular */
   background: var(--secondary);
   color: var(--white);
   font-size: 1.2rem;
@@ -152,11 +169,13 @@
   box-shadow: var(--shadow);
 }
 
+/* Hover de las flechas: agranda y oscurece */
 .carousel__arrow:hover {
   background: var(--primary);
   transform: scale(1.1);
 }
 
+/* ── Dots inferiores del carrusel de platos ── */
 .carousel__dots {
   display: flex;
   justify-content: center;
@@ -164,6 +183,7 @@
   margin-bottom: 2rem;
 }
 
+/* ── Tarjeta individual de plato ── */
 .dish-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -173,33 +193,38 @@
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  box-sizing: border-box;     /* Incluye padding y border en el ancho total */
 }
 
+/* Hover de la tarjeta: se eleva y aumenta la sombra */
 .dish-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
 }
 
+/* Contenedor de la imagen del plato */
 .dish-card__img-wrap {
   width: 100%;
   height: 180px;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: hidden;           /* Recorta la imagen al hacer zoom */
   margin-bottom: 1rem;
 }
 
+/* Imagen del plato */
 .dish-card__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;          /* Cubre el contenedor sin deformar */
   transition: transform 0.4s ease;
 }
 
+/* Efecto zoom de la imagen al pasar el mouse por la tarjeta */
 .dish-card:hover .dish-card__img {
   transform: scale(1.07);
 }
 
+/* Etiqueta de categoría del plato (Entrada, Fondo, Postre, Bebida) */
 .dish-card__category {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -209,6 +234,7 @@
   margin-bottom: 0.4rem;
 }
 
+/* Nombre del plato */
 .dish-card__name {
   font-family: var(--font-title);
   font-size: 1.2rem;
@@ -216,27 +242,31 @@
   margin-bottom: 0.7rem;
 }
 
+/* Descripción del plato */
 .dish-card__desc {
   font-size: 0.9rem;
   color: var(--gray);
   line-height: 1.6;
-  flex: 1;
+  flex: 1;                    /* Crece para empujar el footer hacia abajo */
   margin-bottom: 1.2rem;
 }
 
+/* Pie de la tarjeta: precio y botón */
 .dish-card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: auto;
+  margin-top: auto;           /* Lo empuja al final aunque haya espacio */
 }
 
+/* Precio del plato */
 .dish-card__price {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--secondary);
 }
 
+/* Enlace "Ver más" del plato */
 .dish-card__btn {
   font-size: 0.85rem;
   color: var(--primary);
@@ -248,19 +278,23 @@
   color: var(--secondary);
 }
 
+/* CTA central debajo del carrusel */
 .featured__cta {
   text-align: center;
   margin-top: 1rem;
 }
 
+/* ── Sección "Por qué elegirnos" con fondo color primario ── */
 .why {
   background: var(--primary);
   padding: 5rem 1.5rem;
   margin: 2rem 0;
 }
 
+/* Título blanco dentro de la sección why */
 .why .section-title { color: var(--white); }
 
+/* Grilla de tarjetas adaptable: mínimo 220px por columna */
 .why__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -268,6 +302,7 @@
   margin-top: 3rem;
 }
 
+/* Tarjeta individual de la sección why */
 .why__card {
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.15);
@@ -277,15 +312,18 @@
   transition: var(--transition);
 }
 
+/* Hover: efecto de elevación y aclarado */
 .why__card:hover {
   background: rgba(255,255,255,0.14);
   transform: translateY(-4px);
 }
 
+/* Estilos compactos en una línea para íconos y texto interno */
 .why__icon { font-size: 2.4rem; margin-bottom: 1rem; }
 .why__card h3 { font-family: var(--font-title); font-size: 1.1rem; color: var(--accent); margin-bottom: 0.7rem; }
 .why__card p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
 
+/* ── Banner CTA final con gradiente ── */
 .cta-banner { padding: 3rem 1.5rem 5rem; }
 
 .cta-banner__inner {
@@ -299,14 +337,17 @@
   flex-wrap: wrap;
 }
 
+/* Tipografías del banner CTA */
 .cta-banner__text h2 { font-family: var(--font-title); font-size: 1.7rem; color: var(--white); margin-bottom: 0.5rem; }
 .cta-banner__text p { color: rgba(255,255,255,0.82); font-size: 1rem; }
 
+/* ── Responsive: ajustes para móviles ── */
 @media (max-width: 768px) {
   .hero__title { font-size: 2.2rem; }
   .cta-banner__inner { text-align: center; justify-content: center; padding: 2rem 1.5rem; }
 }
 
+/* ── Imagen dentro de las tarjetas de "por qué elegirnos" ── */
 .why__card__img-wrap {
   width: 100%;
   height: 150px;
@@ -322,6 +363,7 @@
   transition: transform 0.4s ease;
 }
 
+/* Zoom en la imagen al hacer hover en la tarjeta */
 .why__card:hover .why__card__img {
   transform: scale(1.05);
 }

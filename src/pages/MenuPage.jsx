@@ -1,6 +1,10 @@
+// Importa el hook useState para manejar el estado local del componente
 import { useState } from 'react'
+// Importa los estilos específicos de la página de menú
 import './MenuPage.css'
 
+// Arreglo con todos los platos de la carta del restaurante
+// Cada plato tiene: id, categoria, imagen, nombre, descripcion y precio (numérico)
 const menu = [
   // Entradas
   { id: 1, categoria: 'Entradas', img: 'https://images.unsplash.com/photo-1535400255456-984e0e935757?w=400&q=80', nombre: 'Ceviche Clasico', desc: 'Pescado fresco marinado en limon con aji limo, cebolla morada y choclo serrano.', precio: 28 },
@@ -22,21 +26,34 @@ const menu = [
   { id: 14, categoria: 'Bebidas', img: 'https://images.unsplash.com/photo-1622597467836-f3e6707e5ff6?w=400&q=80', nombre: 'Maracuya Frozen', desc: 'Refrescante bebida de maracuya natural con hielo, menta y un toque de azucar.', precio: 12 },
 ]
 
+// Arreglo con las categorías disponibles en los filtros (incluye "Todos" para no filtrar)
 const categorias = ['Todos', 'Entradas', 'Fondos', 'Postres', 'Bebidas']
 
+/*
+ * Componente MenuPage
+ * Renderiza la carta del restaurante con buscador y filtros por categoría.
+ * Muestra los platos en una grilla responsive y permite buscar por nombre o ingredientes.
+ */
 export default function MenuPage() {
+  // Estado: categoría seleccionada actualmente (por defecto "Todos")
   const [filtro, setFiltro] = useState('Todos')
+  // Estado: texto del buscador escrito por el usuario
   const [busqueda, setBusqueda] = useState('')
 
+  // Filtra el arreglo "menu" combinando dos criterios: categoría y texto de búsqueda
   const filtered = menu.filter(item => {
+    // Coincide con categoría si "Todos" está activo o coincide con la categoría exacta
     const matchCat = filtro === 'Todos' || item.categoria === filtro
+    // Coincide con búsqueda si el texto está en el nombre o en la descripción (case-insensitive)
     const matchSearch = item.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
       item.desc.toLowerCase().includes(busqueda.toLowerCase())
+    // Solo incluye el plato si cumple ambas condiciones
     return matchCat && matchSearch
   })
 
   return (
     <div className="menu-page">
+      {/* Cabecera de la página con título y subtítulo */}
       <div className="page-header">
         <div className="container">
           <h1 className="page-header__title">Nuestra Carta</h1>
@@ -45,36 +62,43 @@ export default function MenuPage() {
       </div>
 
       <div className="container menu-container">
+        {/* ── Caja de búsqueda ── */}
         <div className="menu__search">
           <span className="menu__search-icon">🔍</span>
           <input
             type="text"
             placeholder="Buscar plato o ingrediente..."
-            value={busqueda}
-            onChange={e => setBusqueda(e.target.value)}
+            value={busqueda} // Componente controlado: el value sigue al estado
+            onChange={e => setBusqueda(e.target.value)} // Actualiza el estado al escribir
             className="menu__search-input"
           />
+          {/* Botón "x" para limpiar la búsqueda; solo aparece si hay texto escrito */}
           {busqueda && (
             <button className="menu__search-clear" onClick={() => setBusqueda('')}>x</button>
           )}
         </div>
 
+        {/* ── Botones de filtros por categoría ── */}
         <div className="menu__filters">
+          {/* map sobre las categorías para crear un botón por cada una */}
           {categorias.map(cat => (
             <button
               key={cat}
+              // Aplica clase "--active" al botón cuyo valor coincide con el filtro actual
               className={`menu__filter ${filtro === cat ? 'menu__filter--active' : ''}`}
-              onClick={() => setFiltro(cat)}
+              onClick={() => setFiltro(cat)} // Cambia la categoría seleccionada
             >
               {cat}
             </button>
           ))}
         </div>
 
+        {/* Contador de platos: muestra "1 plato" o "N platos" según corresponda */}
         <p className="menu__count">
           {filtered.length} {filtered.length === 1 ? 'plato encontrado' : 'platos encontrados'}
         </p>
 
+        {/* Renderizado condicional: si no hay resultados muestra mensaje, si hay muestra grilla */}
         {filtered.length === 0 ? (
           <div className="menu__empty">
             <span>😕</span>
@@ -82,17 +106,21 @@ export default function MenuPage() {
           </div>
         ) : (
           <div className="menu__grid">
+            {/* map sobre los platos filtrados para generar una tarjeta por cada uno */}
             {filtered.map(item => (
               <div key={item.id} className="menu-card">
+                {/* Imagen del plato */}
                 <div className="menu-card__img-wrap">
                   <img src={item.img} alt={item.nombre} className="menu-card__img" />
                 </div>
+                {/* Cuerpo de la tarjeta con nombre, categoría, descripción y precio */}
                 <div className="menu-card__body">
                   <div className="menu-card__header">
                     <h3 className="menu-card__name">{item.nombre}</h3>
                     <span className="menu-card__cat">{item.categoria}</span>
                   </div>
                   <p className="menu-card__desc">{item.desc}</p>
+                  {/* toFixed(2) formatea el precio con dos decimales */}
                   <div className="menu-card__price">S/. {item.precio.toFixed(2)}</div>
                 </div>
               </div>
