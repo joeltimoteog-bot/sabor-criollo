@@ -31,12 +31,40 @@
   margin-bottom: 1.2rem;
 }
 
-/* ── Iconos de redes sociales ── */
+/* ── Iconos de redes sociales (enlaces circulares) ── */
 .footer__socials {
   display: flex;
   gap: 0.8rem;
-  font-size: 1.4rem;
-  cursor: pointer; /* Cursor de mano para indicar interactividad */
+}
+
+/* Cada enlace de red social es un círculo con SVG centrado */
+.footer__social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;                            /* Forma circular */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);          /* Fondo translúcido sutil */
+  color: rgba(255, 255, 255, 0.85);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Tamaño del SVG dentro del círculo */
+.footer__social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;                            /* Hereda el color del enlace */
+}
+
+/* Hover: fondo de acento, leve elevación y resplandor */
+.footer__social-link:hover {
+  background: var(--accent);
+  color: var(--primary);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(245, 166, 35, 0.35);
 }
 
 /* ── Títulos de cada columna del footer ── */
